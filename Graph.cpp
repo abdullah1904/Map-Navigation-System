@@ -5,8 +5,7 @@
 #include "Graph.h"
 using namespace std;
 
-graph::graph()
-{
+graph::graph(){
 	this->GRAPH.resize(7);
 	// 0 means Washington DC
 	// 1 means New York
@@ -55,8 +54,7 @@ graph::graph()
 	this->GRAPH[6].push_back({5, 382});	 // To San Francisco
 }
 
-void graph::bredthFirstSearch(int start)
-{
+void graph::breadthFirstSearch(int start){
 	const int src = start;
 	cout << "Breadth-First Search: " << endl;
 	vector<bool> visited(GRAPH.size(), false);
@@ -79,8 +77,7 @@ void graph::bredthFirstSearch(int start)
 	}
 }
 
-void graph::depthFirstSeacrh(int start)
-{
+void graph::depthFirstSearch(int start){
 	const int src = start;
 	cout << "Depth-First Search: " << endl;
 	vector<bool> visited(GRAPH.size(), false);
@@ -104,7 +101,7 @@ void graph::depthFirstSeacrh(int start)
 	cout << "\n";
 }
 
-void graph::dijkstraAlgortithm(int source, int destination){
+void graph::dijkstraAlgorithm(int source, int destination){
 	const int INF = 1e9;
 	int numNodes = GRAPH.size();
 	vector<int> distance(numNodes, INF);

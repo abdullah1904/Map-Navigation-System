@@ -12,9 +12,9 @@ struct edge{
 class graph {
 public:
 	graph();
-	void bredthFirstSearch(int = 0);
-	void depthFirstSeacrh(int = 0);
-	void dijkstraAlgortithm(int,int);
+	void breadthFirstSearch(int = 0);
+	void depthFirstSearch(int = 0);
+	void dijkstraAlgorithm(int,int);
 private:
 	std::vector<std::vector<edge>> GRAPH;
 	// 0 means Washington DC
