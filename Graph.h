@@ -3,11 +3,11 @@
 
 #include <vector>
 
+
 struct edge{
 	int destination;
 	int weight;
 };
-
 
 class graph {
 public:
@@ -24,7 +24,7 @@ private:
 	// 4 means Denver
 	// 5 means San Francisco
 	// 6 means Los Angeles
-	std::vector<std::string> nameOfVertices = {"Washington DC","New York", "Chicago","Detroit","Denver","San Francisco","Los Angeles"};
+	std::vector<std::string> nameOfVertices = {"Washington-DC","New-York", "Chicago","Detroit","Denver","San-Francisco","Los-Angeles"};
 };
 
 #endif 

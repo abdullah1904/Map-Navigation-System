@@ -2,8 +2,14 @@
 #include <vector>
 #include <queue>
 #include <stack>
+#include <Windows.h>
 #include "Graph.h"
 using namespace std;
+
+
+void setColor1(int code) {
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), code);
+}
 
 graph::graph(){
 	this->GRAPH.resize(7);
@@ -131,10 +137,10 @@ void graph::dijkstraAlgorithm(int source, int destination){
 		}
 	}
 	if (distance[destination] == INF){
-		cout << "No path from " << nameOfVertices[source]<< " to " << nameOfVertices[destination] << endl;
+		cout << "No path from ";setColor1(10);cout<< nameOfVertices[source];setColor1(15);cout<< " to " ;setColor1(10);cout<< nameOfVertices[destination] << endl;
 	}
 	else{
-		cout << "Shortest path from " << nameOfVertices[source] << " to " << nameOfVertices[destination] << ":\n\n";
+		cout << "Shortest path from ";setColor1(10);cout << nameOfVertices[source] ;setColor1(15);cout<< " to ";setColor1(10); cout<< nameOfVertices[destination] << ":\n\n";
 		stack<int> path;
 		int current = destination;
 		while (current != -1)
@@ -142,12 +148,14 @@ void graph::dijkstraAlgorithm(int source, int destination){
 			path.push(current);
 			current = parent[current];
 		}
+		setColor1(10);
 		cout << "Path: ";
+		setColor1(15);
 		while (!path.empty())
 		{
 			cout << nameOfVertices[path.top()] << " ";
 			path.pop();
 		}
-		cout << "\n\nTotal distance from "<<nameOfVertices[source]<<" to "<<nameOfVertices[destination]<<" is "<< distance[destination] <<" miles"<< endl;
+		cout << "\n\nTotal distance ";setColor1(10);cout<<distance[destination]; setColor1(15);cout<<" miles"<< endl<<endl;
 	}
 }
