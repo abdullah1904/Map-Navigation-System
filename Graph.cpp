@@ -134,7 +134,7 @@ void graph::dijkstraAlgorithm(int source, int destination){
 		cout << "No path from " << nameOfVertices[source]<< " to " << nameOfVertices[destination] << endl;
 	}
 	else{
-		cout << "Shortest path from " << nameOfVertices[source] << " to " << nameOfVertices[destination] << ":\n";
+		cout << "Shortest path from " << nameOfVertices[source] << " to " << nameOfVertices[destination] << ":\n\n";
 		stack<int> path;
 		int current = destination;
 		while (current != -1)
@@ -148,6 +148,6 @@ void graph::dijkstraAlgorithm(int source, int destination){
 			cout << nameOfVertices[path.top()] << " ";
 			path.pop();
 		}
-		cout << "\nTotal distance: " << distance[destination] <<" miles"<< endl;
+		cout << "\n\nTotal distance from "<<nameOfVertices[source]<<" to "<<nameOfVertices[destination]<<" is "<< distance[destination] <<" miles"<< endl;
 	}
 }
